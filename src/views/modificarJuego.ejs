@@ -1,0 +1,104 @@
+<%- include("./partials/head") %> 
+
+   <!--HEADER: CABECERA Y MENÚ DE NAVEGACIÓN-->
+   <%- include("./partials/header") %> 
+    <!--armado del formulario Modificacion del producto-->
+    <div class="formulario container">
+        <div class=" col-12 titulo">
+            <h3 class="h3tituloAgreYMod">Modificar Juego</h3>
+        </div>
+        <form Class="FormAdd" action="#" method="POST">
+    
+            <div class="contBarra col-12 col-md-12">
+                <form class="fronBuscar form-inline" action="">
+                    <input class="inputBuscador form-control" type="text" placeholder="Ingrese el codigo del juego que desea modificar">
+                    <button class="btnBuscador " type="submit"><i class="fas fa-search"></i>
+                    </button>
+
+                </form>
+            </div>
+
+    
+            <div class="form-row">
+                <div class="form-group col-12 col-md-6 col-lg-6">
+                    <label for="nombreDelProducto">Nombre del Juego:</label>
+                    <input type="text" name="nombreDelProducto" id="nombreDelProducto" class="form-control" placeholder="Ingrese el Nombre del juego" required>
+                </div>            
+    
+                <div class="form-group col-12 col-md-6 col-lg-6">
+                    <label clase="" for="codigo">Codigo del juego:</label>
+                    <input type="number" name="codigo" id="codigo" class="form-control" placeholder="Ingrese el Codigo del juego" required>
+                </div>  
+                <div class="form-group col-12 col-md-6 col-lg-6">    
+                    <label form="precioJuego">Precio del juego: </label> 
+                    <input type="tex" placeholder="Ingrese precio del juego" class="form-control" name="precioProd" id="precioJuego" required>
+    
+                </div>
+                <div class="form-group col-12 col-md-6 col-lg-6">    
+                    <label form="tamanio">Tamaño del juego: </label> 
+                    <input type="tex" placeholder="Ingrese tamaño del juego" class="form-control" name="tamanioJue" id="tamanio" required>
+    
+                </div>
+  
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group col-12 col-md-6 col-lg-6">    
+                    <label form="idioma">Idioma del juego: </label> 
+                    <input type="tex" placeholder="Ingrese idioma del juego" class="form-control" name="idiomaJuego" id="idioma" required>
+    
+                </div>
+                <div class="form-group col-12 col-md-6 col-lg-6">    
+                    <label form="categoria">Categoria del juego: </label> 
+                    <input type="tex" placeholder="Ingrese la categoria del juego" class="form-control" name="categoriaJuego" id="categoria" required>
+    
+                </div>
+                <div class="form-group col-12 col-md-6 col-lg-6">    
+                    <label form="subtituloJuego">Idioma subtitulo del juego: </label> 
+                    <input type="tex" placeholder="Ingrese el idioma del subtitulo del juego" class="form-control" name="subtitulo" id="subtituloJuego" required>
+    
+                </div>
+                <div class="form-group col-12 col-md-6 col-lg-6">    
+                    <label form="fecha">Fecha de lanzamiento: </label> 
+                    <input type="tex" placeholder="Ingrese fecha de lanzamiento" class="form-control" name="fechaLanzam" id="fecha" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-12 col-md-6 col-lg-6">
+                    <label form="stock">Cantidad de Stock</label> 						
+                    <input type="number" id="stock" class="form-control" name="stock" placeholder="Ingrese la cantidad de Stock" required/> 
+                </div>   
+                <br>
+                <div class="form-group col-12 col-md-6 col-lg-6">
+                    <label form="descuento">Descuento %</label> 						
+                    <input type="number" id="descuento"  class="form-control" name="descuento" placeholder="Ingrese porcentaje del juego"/> 
+                </div>
+                  
+                <div class="form-group col-12 col-md-6 col-lg-6">            
+                    <label form="imagen">Imagen del juego:</label> 
+                    <input type="url" id="imagen" name="imagen" class="form-control" placeholder="Ingrese el url de la imagen" required/>             
+                </div>
+
+                <div class="form-group col-12 col-md-6 col-lg-6">    
+                    <label form="detalle">Descripcion corta: </label> 
+                    <input type="tex" placeholder="Ingrese descripcion corta" class="form-control" name="detalle" id="detalle" required>
+    
+                </div>
+            </div>
+
+            <article class="row col-12 botones">
+                <div class="col-6 agregar">
+                    <input type="submit" value="Agregar " class="botonAgregarProducto"/>  
+                </div> 
+                <div class="col-6 cancelar">
+                        <input type="reset" value="Cancelar" class="botonCancelar"/> 
+                </div> 
+            </article>
+    
+     
+        </form>
+    </div>
+
+    <%- include("./partials/footer") %> 

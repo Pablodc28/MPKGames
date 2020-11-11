@@ -1,0 +1,60 @@
+
+
+/*stilo de botones agregar y modificar*/
+
+
+.contBtnOpciones{
+    margin: 50px 0px 50px 0px;
+}
+.tituloOpcion{
+    font-family: 'Uncial Antiqua', cursive;
+    font-size: 24px;
+    text-align: center;
+}
+
+@media(min-width:768px){
+    /*stilo de botones agregar y modificar*/
+    .contBtnOpciones{
+    margin: 50px 0px 50px 0px;
+    }
+    .tituloOpcion{
+    text-align: center;
+    padding-top: 55px;
+    }
+
+    /*Style*/
+    .contBuscador {
+        display: none;
+    }
+    .contBuscadorMd{
+        display: block;
+        padding: 0px;
+    }
+    .bg-light {
+        width: 100%;
+    }
+    li{
+        display: ruby;
+    }
+
+}
+
+@media(min-width:992px){
+    /**/
+    .contBuscadorMd {
+        margin-left: 71px;
+        padding-top: 6px;
+    }
+    li {
+        font-size: 134%;
+    }
+    svg {
+        vertical-align: 0px;
+    }
+    /**/
+
+   .tituloOpcion{
+
+        font-size: 47px;
+    }
+}

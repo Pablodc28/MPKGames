@@ -1,0 +1,161 @@
+<%- include("./partials/head") %> 
+
+<%- include("./partials/header") %> 
+
+<main>
+   <!--****** SECCIONES: PRODUCTOS ****** -->    
+    <div class="container py-5"> <!--caja contendedora de bootstrap con padding superior e inferior de 5 (escala de boostrap)-->        
+        <section> <!--SECCIÓN: PRODUCTOS Utimos Juegos -->            
+            <div class="row productos"> <!--caja que contiene todos los productos de la ultima visita-->                
+                <div class="titulo col-12"> <!--caja que contiene el titulo de la sección-->
+                    <h2>
+                        Ofertas en los Utimos Juegos 
+                    </h2>
+                </div>
+              <!--recorro los productos basados en la ultima visita con un forEach-->
+              <% OfertasUtimosJuegos.forEach(producto => { %>
+                <!--caja de la grilla de bootstrap-->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <!--caja que muestra la información del producto-->
+                    <div class="contenido">
+                        <!--ETIQUETA SEMANTICA-->
+                        <figure>
+                            <a href="/productos/detalle/<%= producto.IdJuego %> ">
+                                <img src="/images/products/<%- producto.Imagen %>  " alt=" ">
+                            </a>
+                        </figure>
+                        <form action="/carritos/agregarAlCarrito/<%= producto.IdJuego %>" method="POST">                                                   
+                            <!--informacion-->
+                            <article class="classArtIndex">                                
+                                <input name="IdJuego" style="display: none" value="<%- producto.IdJuego %>">
+                                
+
+                                <!--precio-->
+                                <h2>$<%- producto.Precio %></h2>                                
+                                <h2>$
+                                     <%- (producto.Precio -producto.Precio * producto.Descuento /100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %>
+                                </h2>
+                                <input name="precioDescuento" style="display: none" value="<%- (producto.Precio -producto.Precio * producto.Descuento /100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %>">
+
+                                <!--descuento-->
+                                <% if (producto.Descuento !=0) { %>
+                                    <span><%- producto.Descuento %> % OFF</span>
+                                <% } %>     
+                                                      
+                               <p> <%- producto.NombreDeProducto %></p>
+                               <input name="NombreDeproducto" style="display: none" value="<%- producto.NombreDeProducto %>">
+
+                               <!--icono de Consolas-->
+                                   <i class="fab fa-xbox Xbox"></i>
+                                   <i class="fab fa-playstation playStation"></i>                              
+                                   
+                                    <button type="submit" class="btn btn-primary btn-lg btnAgregarCarrito">Agregar al Carrito</button>                                                                        
+                        </form>
+                            </article>                         <!--finaliza contenido-->
+                    </div>                    <!--finaliza caja de grilla de boostrap-->
+                </div> <!--finaliza el div.row-->
+                <% }) %>
+            </div>
+
+            <!--FINALIZA SECCIÓN ULTIMOS JUEGOS OFERTAS-->
+        </section>
+        <section> <!--SECCIÓN: PRODUCTOS Utimos Juegos -->            
+            <div class="row productos"> <!--caja que contiene todos los productos de la ultima visita-->                
+                <div class="titulo col-12"> <!--caja que contiene el titulo de la sección-->
+                    <h2>
+                        Ofertas de la Semana 
+                    </h2>
+                </div>
+              <!--recorro los productos basados en la ultima visita con un forEach-->
+              <% OfertasDeLaSemana.forEach(producto => { %>
+                <!--caja de la grilla de bootstrap-->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <!--caja que muestra la información del producto-->
+                    <div class="contenido">
+                        <!--ETIQUETA SEMANTICA --*-->
+                        <figure>
+                            <a href="/productos/detalle/<%= producto.IdJuego %> ">
+                                <img src="/images/products/<%- producto.Imagen %>  " alt=" ">
+                            </a>
+                        </figure>
+                        <form action="/carritos/agregarAlCarrito/<%= producto.IdJuego %>" method="POST">                                                   
+                            <!--informacion-->
+                            <article class="classArtIndex">                                
+                                <input name="IdJuego" style="display: none" value="<%- producto.IdJuego %>">
+                                <input name="codigo" style="display: none" value="<%- producto.Codigo %>">
+
+                                <!--precio-->
+                                <h2>$<%- producto.Precio %></h2>                                
+                                <h2>$
+                                     <%- (producto.Precio -producto.Precio * producto.Descuento /100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %>
+                                </h2>
+                                <input name="precioDescuento" style="display: none" value="<%- (producto.Precio -producto.Precio * producto.Descuento /100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") %>">
+
+                                <!--descuento-->
+                                <% if (producto.Descuento !=0) { %>
+                                    <span><%- producto.Descuento %> % OFF</span>
+                                <% } %>     
+                                                      
+                               <p> <%- producto.NombreDeProducto %></p>
+                               <input name="NombreDeproducto" style="display: none" value="<%- producto.NombreDeProducto %>">
+
+                               <!--icono de Consolas-->
+                                   <i class="fab fa-xbox Xbox"></i>
+                                   <i class="fab fa-playstation playStation"></i>                              
+                                   
+                                    <button type="submit" class="btn btn-primary btn-lg btnAgregarCarrito">Agregar al Carrito</button>                                                                        
+                        </form>
+                            </article> 
+                        <!--finaliza contenido-->
+                    </div>
+                    <!--finaliza caja de grilla de boostrap-->
+                </div>
+                <!--finaliza el div.row-->
+                <% }) %>
+            </div>
+
+            <!--FINALIZA SECCIÓN ULTIMOS JUEGOS OFERTAS-->
+        </section>
+    </div>
+
+
+
+
+    <section class="container-fluid">
+        <!--caja con el contenido principal de footer-->
+        <div class="row">
+            <!--contiene pago con tarjeta-->
+            <div class="col-12 col-lg-4">
+                <article class="classArtIndex">
+                    <i class="fas fa-credit-card "></i>
+                    <h4>Pagá con tarjeta o en efectivo</h4>
+                    <p >Con MPK Games Cash, tenés cuotas sin interés con tarjeta o efectivo en puntos de pago. ¡Y siempre es seguro!
+                    </p>
+                </article>
+            </div>
+                <!--contiene envio gratis-->
+            <div class="col-12 col-lg-4">
+                <article class="classArtIndex">
+                    <i class="fas fa-gift "></i>
+                    <h4>Envío gratis desde $ 999</h4>
+                    <p >Solo por estar registrado en MPK Games tenés envíos gratis en miles de productos. Es un beneficio de Mercado Puntos.
+                    </p>
+                </article>
+            </div>
+                <!--contiene seguridad-->
+            <div class="col-12 col-lg-4">
+                <article class="classArtIndex">
+                    <i class="fas fa-user-shield "></i>
+                    <h4>Seguridad, de principio a fin
+                    </h4>
+                    <p>¿No te gusta? ¡Devolvelo! En MPK Games, no hay nada que no puedas hacer, porque estás siempre protegido.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+</main>      
+
+        
+
+<%- include("./partials/footer") %> 

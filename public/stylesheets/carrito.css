@@ -1,0 +1,286 @@
+/* 
+- IMPORTS 
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&family=Tenali+Ramakrishna&family=Uncial+Antiqua&display=swap" rel="stylesheet"');
+
+
+.h1MiCompra{
+    font-family: 'Uncial Antiqua', cursive;
+}
+
+menu li a{
+        width: 20%;
+        height: 100%;
+}
+
+
+/* cambio el aspecto cuando el boton tiene el foco*/
+
+
+
+/* Titulo y Subtitulo del carrito */
+
+
+.miCompra{
+    padding-top: 20px;
+
+}
+.miCompra h1{
+    color: var(--color-grisOscuro);
+    font-size: 30px;
+    
+}
+.miCompra .iconoCarrito{
+    color: var(--color-grisOscuro);
+    vertical-align: 0px;
+    
+}
+.miCompra p{
+    padding-left: 5px;
+    display: inline-block;
+}
+
+
+/*Ocultar lista de pasos para celulares*/
+
+
+
+ .listaDePasos{
+    font-family: 'Quicksand', sans-serif;
+    color: black;
+    display: none;
+}
+
+.misProductos{
+    padding-top: 20px;
+}
+.misProductos h2{
+    font-family: 'Uncial Antiqua', cursive;
+    color: var(--color-grisOscuro);
+    font-size: 25px;
+
+}
+.misProductos .iconoCuadricula{
+    vertical-align: -2px;
+}
+.misProductos p{
+    padding-left: 5px;
+    display: inline-block;
+}
+
+/* Detalle de la compra*/
+
+.detalleDeCompra{
+    background-color: #fff;
+    margin: 0px 5px;
+    border-top: solid 1px grey;
+    border-left: solid 1px grey;
+    border-right: solid 1px grey;
+    
+    
+}
+.caracteristica{
+    display: flex;
+    padding: 0px;
+}
+
+
+.caracteristica p{
+    font-family: 'Quicksand', sans-serif;
+    padding: 5px 5px;
+    margin-bottom: 0px;
+}
+
+/* Contenido de la compra*/
+
+.contenidoDeCompra{
+    background-color: #fff;
+    font-family: 'Quicksand', sans-serif;
+    margin: 0px 5px;
+    border: solid 1px grey;
+
+}
+.contenidoDeCompra .imagen{
+    display: none;
+    
+}
+.contenidoDeCompra .cantidad{
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    
+}
+.contenidoDeCompra .eliminar{
+    padding: 2px 5px;
+    vertical-align: 20px;
+    margin-top: 5px;
+}
+
+/* Precio total*/
+
+.precioTotal{
+    padding-top: 50px;
+}
+.precioTotal h4{
+    font-family: 'Quicksand', sans-serif;
+    text-align: right;
+
+}
+/* Boton de siguiente*/
+
+.botonSiguiente{
+    padding: 20px 0px;
+    
+}
+.botonSiguiente .siguiente{
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--color-AzulOceano);
+}
+
+
+/*
+FOOTER
+*/
+
+.footer {
+    padding: 20px;
+    background-color: #142850;
+}
+
+.footer article {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer article i {
+    font-size: 35px;
+    color: var(--color-Turquesa);
+    display: flex;
+    margin: 10px 0;
+}
+
+.footer article h4{
+    color: var(--color-grisClaro);
+    display: flex;
+    margin: 20px 0;
+}
+
+
+.footer article p {
+    color: var(--color-grisClaro);
+    display: flex;
+    margin: 10px 0;
+}
+
+.redes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.redes i{
+    text-align: center;    
+    padding: 5px;
+    font-size: 28;
+    color: var(--color-Turquesa);        
+    /* flex-wrap: wrap; */
+}
+
+.copyright {    
+    text-align: center;    
+    
+    color:var(--color-azul);
+    font-size: 22px;
+    
+}
+
+
+
+/* --- VERSION PARA TABLET --- */
+
+@media(min-width:768px) {
+
+    header .cuotas {
+        margin: 0;
+        text-align: right;
+    }
+
+    header ul.usuario li:last-child {
+        padding-right: 0;
+    }
+    .listaDePasos{
+        display: block;
+        padding: 0px;
+    }
+    .list-group-item.active{
+        background-color: var(--color-AzulOceano);
+    }
+    .listaDePasos .cuadricula{
+        vertical-align: -3px;
+    }
+    .listaDePasos .camion{
+        vertical-align: -4px;
+    }
+    .listaDePasos .tarjeta{
+        vertical-align: -4px;
+    }
+    .listaDePasos .verificado{
+        vertical-align: -4px;
+    }
+
+    .contenidoDeCompra .imagen{
+        display: block;   
+    }
+
+    .imgJuego00{
+        width: 100%; 
+        height: 100px;
+        margin: 5px 5px;     
+    }
+    .caracteristica p{
+        text-align: center;
+    }
+    .caracteristica .precio{
+        text-align: start;
+    }
+    .contenidoDeCompra .precioNumero{
+        text-align: start;
+    }
+}
+
+
+
+/* --- VERSION PARA ESCRITORIO --- */
+
+@media(min-width:1024px) {
+    section article h2 {
+        font-size: 1.9rem;
+    }
+    .detalleDeCompra{
+        margin-left: 30px;
+    }
+    .contenidoDeCompra{
+        margin-left: 30px;
+    }
+
+    .misProductos{
+        margin: 5px 0px;
+        padding: 33px 30px
+    }
+    .botonSiguiente{
+        text-align: center;
+        padding-right: 140px;
+    }
+    footer article h4 {
+        font-size: 1.3rem;
+    }
+    footer article p {
+        font-size: 0.9rem;
+    }
+    footer .copyright {
+        font-size: 0.7rem;
+    }
+}
