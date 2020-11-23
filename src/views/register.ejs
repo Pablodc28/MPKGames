@@ -3,6 +3,7 @@
 <%- include("./partials/head") %> 
 <%- include("./partials/header") %> 
 
+
 <main>
     <div class="container">
         <div class="formularioRegistro"> 
@@ -21,7 +22,7 @@
                             </div>
                     </div>   
 
-                    <div class="row"> 
+                    <!-- <div class="row"> 
                         <div class="col-12 col-md-6">
                             <button type="button" class="btn btn-primary btnLoginRedesFacebook" >Registrarse con Facebook <i class="fab fa-facebook-square"></i></button>
                             
@@ -29,9 +30,9 @@
                         <div class="col-12 col-md-6">                    
                             <button type="button" class="btn btn-light btnLoginRedesGoogle">Registrarse con Google <i class="fab fa-google-plus-square"></i></button>
                         </div>  
-                    </div>
+                    </div> -->
 
-                    <h6>O registrese Manulamente</h6>
+                    <!-- <h6>Registrese Manulamente</h6> -->
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
@@ -47,19 +48,6 @@
                         </div>    
                     </div>
 
-
-                    <div class="form-row">
-                            <div class="form-group col-md-6">
-                            <label form="usu_CodigoArea">Codigo de Area</label> 						
-                            <input type="number_format" id="usu_CodigoArea" class="form-control" name="usu_CodigoArea" placeholder="Ingrese su Codigo de Area ej: 011"/> 
-                        </div>   
-                        <br>
-                        <div class="form-group col-md-6">
-                            <label form="usu_Telefono">Telefono</label> 						
-                            <input type="text" id="usu_Telefono"  class="form-control" name="usu_Telefono" placeholder="Ingrese su telefono"/> 
-                            <small id="smallTelefono" class="text-danger"></small>
-                        </div>
-                    </div>    
 
                     <div class="form-group">            
                         <label form="usu_email">email:</label> 
@@ -77,10 +65,17 @@
                         <small id="smallContraseña2" class="text-danger"><%= (typeof errors != 'undefined' && errors.contraseña2)?errors.contraseña2.msg: "" %> </small>
                     </div>
 
-                    <div class="form-group">
-                        <label for="Avatar">Ingrar un Avatar</label>
-                        <input type="file" name="avatar" id="avatar" class="form-control" >
-                    </div>
+                 
+
+                <div class="form-group col-md-12">            
+                    <label form="imagen">Imagen Avatar del Usuario:</label> 
+
+                    <figure class="text-center">
+                        <img id="imgPrevia" for="Avatar" src="/images/Avatares/default.png" alt="Imagen del Producto" class="img-fluid">
+                        <input type="file" onchange="previewFile()" id="avatar" name="avatar" accept="image/png, image/jpeg, image/jpg, image/gif" class="form-control" placeholder="Ingrese el url de la imagen" />
+                        <small class="text-danger" id="errorFoto"></small>
+                    </figure>
+                </div>
 
                     <div class="form-group">
                         <div class="form-check">
@@ -109,4 +104,5 @@
 <%- include("./partials/footer") %> 
 
 <script src="/javascripts/registerFront.js"></script>
+<script src="/javascripts/previeFile.js"></script>
 

@@ -6,7 +6,7 @@ const { Op } = require("sequelize");
 
 module.exports = {    
 
-    enCarrito: function(req, res) {        
+    enCarrito: function(req, res) {         
         let productoEnCarrito = []
         let sumaTotal = 0;
 
@@ -62,7 +62,26 @@ module.exports = {
             res.redirect('/carritos/enCarritoCompras/')                                               
     },
        
-
+       
+    FinalizarCompra:function(req,res){
+        let idUsuario =  req.params.id;         
+        console.log(idUsuario)
+        
+        db.Carrito.destroy({
+                where: {
+                    usuario_id: idUsuario,
+                    // usuario_id: req.cookies.idUsuario
+            }
+            })   
+            .then(result=>{
+                // console.log(result)                
+                res.redirect('/')  
+            })
+            .catch(errores=>{
+                console.log(errores)
+            })        
+                                                         
+    },
 
     actualizarCantidadAComprar:function(req,res){
             let idproducto = req.params.id;
@@ -77,5 +96,34 @@ module.exports = {
                   
                 res.redirect('/carritos/enCarritoCompras/')                                   
         },
-    
+        Mientrega: function(req, res){
+
+
+            res.render("miEntrega",{
+                title: "Mi entrega",
+                user: req.session.user
+            })
+ 
+        },
+
+        MiPago: function(req, res){
+
+
+            res.render("miPago",{
+                title: "Mi Pago",
+                user: req.session.user
+            })
+ 
+        },
+        MiResumen: function(req, res){
+
+
+            res.render("miResumen",{
+                title: "Mi Compra",
+                user: req.session.user
+            })
+ 
+        }
+
+ 
 }

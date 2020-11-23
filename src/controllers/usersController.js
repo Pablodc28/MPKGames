@@ -71,7 +71,7 @@ module.exports ={
             .then(user => {
                 req.session.user = { //asigno a la session un objeto literal con los datos del usuario
                     id: user.id,
-                    nick: user.nombre + " " + user.apellido,
+                    nick: "Hola "+user.nombre,
                     email: user.email,                    
                     avatar: user.avatar,
                     rol: user.rol,                    
@@ -138,16 +138,33 @@ module.exports ={
 
  //OK realizado
  eliminar:function(req,res){
-    let idUser = req.params.id;
-        
-    db.User.destroy({
+    let idUser = req.params.id;       
+
+    db.Carrito.destroy({
+        where: {
+            usuario_id: idUser,                
+    }        
+    })  
+    .then(resultadoCarrito=>{
+        db.User.destroy({        
             where: {
-                id: idUser,
-        }
-        });          
-        
-        res.redirect('/users/login')                                   
-    },        
+                id: idUser,                
+        }        
+        })                      
+        .then(result=>{
+            // console.log(result)
+            req.session.destroy();
+            if(req.cookies.userMPKGames){
+                res.cookie('userMPKGames','',{maxAge:-1})
+            }
+            res.redirect('/users/login')                                   
+        })
+        .catch(errores=>{
+            console.log(errores)
+        })        
+    })    
+ },
+      
 
 
     logout:function(req,res){
